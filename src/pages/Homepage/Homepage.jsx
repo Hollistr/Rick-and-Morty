@@ -34,7 +34,7 @@ function Homepage() {
     )
 
   return (
-    <div className={darkMode?"homepage-container homepage-dark":"homepage-container"}>
+    <div className={darkMode?"home-container home-dark":"home-container"}>
         <Search setCharacters={setCharacters} />
         <h1>Main Characters</h1>
         <div className='characters-container'>

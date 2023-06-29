@@ -23,6 +23,7 @@ function Header() {
             <Link to='/episodes' style={ {marginRight:"10px"} }>Episodes</Link>
         </div>
         <div>
+          <Link to='/favorites'>My Favorites</Link>
           <button className= {darkMode?"theme-button theme-button-dark":"theme-button"}
           onClick={() => setDarkMode(!darkMode)} >
             {

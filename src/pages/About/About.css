@@ -1,7 +1,16 @@
-.about-container{
+.about-container {
     min-height: 100vh;
 }
 
+.about-dark {
+    background-color: black;
+    color:white;
+ }
+
 .about-container h1, .about-container p{
     padding: 20px;
+}
+
+.about-container img {
+    width: 100%;
 }

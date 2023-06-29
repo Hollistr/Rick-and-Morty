@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./Episodes.css"
 import axios from 'axios'
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 function Episodes() {
+  // change to use global state
+  // NOTE: {} not []
+  const {darkMode, setDarkMode} = useContext(ThemeContext)
+
   // Create state for episode numbers
   const [options, setOptions] = React.useState([])
   const [selectedOption, setSelectedOption] = React.useState(1)
   const [selectedEpisode, setSelectedEpisode] = React.useState()
-  const [characterList, setCharacterList] = React.useState()
+  const [characterList, setCharacterList] = React.useState([])
 
   // when page loads I need to creat the dropdown UI
   // https://rickandmortyapi.com/api/episode
@@ -81,7 +86,7 @@ function Episodes() {
     }, [selectedOption]
   )
   return (
-    <div className='episodes-container'>
+    <div className={darkMode?"episodes-container episodes-dark":"episodes-container"}>
       <div>
         <label>Select an episode:</label>
         <select id='select-episode'
